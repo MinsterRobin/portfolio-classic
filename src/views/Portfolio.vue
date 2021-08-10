@@ -2,15 +2,18 @@
     <div class="layout">
         <Profil/>
         <SkillsCard v-bind:title="skillsCards[0].title" v-bind:skills="skillsCards[0].skills"/>
+        <BlogCard image="blog.jpg" title="test" description="test" link="dev.to"/>
     </div>
 </template>
 
 <script>
     import Profil from "@/components/Profil";
     import SkillsCard from "@/components/SkillsCard";
+    import BlogCard from "@/components/BlogCard";
+
     export default {
         name: "Portfolio",
-        components: {SkillsCard, Profil},
+        components: {BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [
