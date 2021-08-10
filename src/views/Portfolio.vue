@@ -10,6 +10,7 @@
                 link="dev.to"/>
         <ExperiencesCard />
         <HobbiesCard />
+        <ProjectCard />
     </div>
 </template>
 
@@ -19,10 +20,11 @@
     import BlogCard from "@/components/BlogCard";
     import ExperiencesCard from "@/components/ExperiencesCard";
     import HobbiesCard from "@/components/HobbiesCard";
+    import ProjectCard from "@/components/ProjectCard";
 
     export default {
         name: "Portfolio",
-        components: {HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
+        components: {ProjectCard, HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [
