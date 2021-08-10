@@ -28,23 +28,19 @@
 </script>
 
 <style lang="scss" scoped>
-    .tamere {
-        height: 100%;
-    }
+
     .profil {
         display: flex;
-        background-color: $color-background-secondary;
-        border-radius: 12px;
         gap: 20px;
         flex-wrap: wrap;
-        padding: 20px;
 
+        @extend %card;
 
         &__picture {
             min-width: 220px;
             min-height: 220px;
-            max-height: 300px;
-            max-width: 300px;
+            max-height: 250px;
+            max-width: 250px;
             height: 100%;
             border-radius: 12px;
             border: solid $color-primary 3px;

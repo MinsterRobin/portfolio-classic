@@ -40,10 +40,9 @@
         display: flex;
         flex-direction: row-reverse;
         flex-wrap: wrap;
-        padding: 20px;
-        background-color: $color-background-secondary;
-        border-radius: 12px;
         gap: 30px;
+
+        @extend %card;
 
         &__picture {
             flex: 1;

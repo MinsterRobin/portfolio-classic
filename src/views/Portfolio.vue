@@ -2,7 +2,12 @@
     <div class="layout">
         <Profil/>
         <SkillsCard v-bind:title="skillsCards[0].title" v-bind:skills="skillsCards[0].skills"/>
-        <BlogCard image="blog.jpg" title="test" description="test" link="dev.to"/>
+        <BlogCard
+                image="blog.jpg"
+                title="How to organize your CSS"
+                description="In this article I tell the story about Proin eu justo sit amet lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.
+                            Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                link="dev.to"/>
     </div>
 </template>
 

@@ -31,12 +31,9 @@
     .skill-card {
         display: flex;
         flex-direction: column;
-        background-color: $color-background-secondary;
-        border-radius: 12px;
-        padding: 20px;
         gap: 15px;
-        width: 100%;
-        height: 100%;
+
+        @extend %card;
 
         &__title {
             text-transform: uppercase;
