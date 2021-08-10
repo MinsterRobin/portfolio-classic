@@ -9,6 +9,7 @@
                             Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                 link="dev.to"/>
         <ExperiencesCard />
+        <HobbiesCard />
     </div>
 </template>
 
@@ -17,10 +18,11 @@
     import SkillsCard from "@/components/SkillsCard";
     import BlogCard from "@/components/BlogCard";
     import ExperiencesCard from "@/components/ExperiencesCard";
+    import HobbiesCard from "@/components/HobbiesCard";
 
     export default {
         name: "Portfolio",
-        components: {ExperiencesCard, BlogCard, SkillsCard, Profil},
+        components: {HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [

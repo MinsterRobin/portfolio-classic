@@ -43,7 +43,6 @@
         flex-wrap: wrap;
 
         &__logo {
-
             width: 84px;
             height: 84px;
             object-fit: contain;
@@ -67,7 +66,7 @@
 
             &--title {
                 font-weight: 600;
-                color: #333333;
+                color: $color-text-tertiary;
                 margin-top: 12px;
                 margin-bottom: 33px;
             }
