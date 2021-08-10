@@ -8,6 +8,7 @@
                 description="In this article I tell the story about Proin eu justo sit amet lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.
                             Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                 link="dev.to"/>
+        <ExperiencesCard />
     </div>
 </template>
 
@@ -15,10 +16,11 @@
     import Profil from "@/components/Profil";
     import SkillsCard from "@/components/SkillsCard";
     import BlogCard from "@/components/BlogCard";
+    import ExperiencesCard from "@/components/ExperiencesCard";
 
     export default {
         name: "Portfolio",
-        components: {BlogCard, SkillsCard, Profil},
+        components: {ExperiencesCard, BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [
