@@ -7,12 +7,9 @@
                     class="button"
                     v-on:click="setFilter(filter)"
                     v-bind:class="{'button--active': getFilter === filter}"
-                >
-
-                    {{filter}}
+                    >{{filter}}
                 </button>
             </div>
-            <p>{{getFilter}}</p>
         </div>
     </div>
 </template>
