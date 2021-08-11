@@ -1,10 +1,14 @@
 <template>
     <div class="project">
-        <div class="project__image" v-bind:style="{ backgroundImage: 'url(' + require('@/assets/cooking.jpg') + ')' }"/>
+        <div class="project__image" v-bind:style="{ backgroundImage: 'url(' + require('@/assets/' + image ) + ')' }"/>
         <div class="project__description">
-            <p class="project__tags project__text">#HTML #CSS #responsive</p>
-            <p class="project__text project__text--title">Recipe Blog</p>
-            <p class="project__text">In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. </p>
+            <div class="project__tags">
+                <div v-for="tag in tags" v-bind:key="tag.index">
+                    <p class="project__text">#{{tag}}</p>
+                </div>
+            </div>
+            <p class="project__text project__text--title">{{title}}</p>
+            <p class="project__text">{{description}}</p>
             <div class="project__buttons">
                 <button class="button">Demo</button>
                 <button class="button button--outline">Code</button>
@@ -15,7 +19,25 @@
 
 <script>
     export default {
-        name: "ProjectCard"
+        name: "ProjectCard",
+        props: {
+            title: {
+                type: String,
+                required: true
+            },
+            tags: {
+                type: Array,
+                required: true
+            },
+            description: {
+                type: String,
+                required: true
+            },
+            image: {
+                type: String,
+                required: true
+            }
+        }
     }
 </script>
 
@@ -47,7 +69,9 @@
         }
 
         &__tags {
-
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
         }
 
         &__text {

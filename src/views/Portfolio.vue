@@ -10,7 +10,18 @@
                 link="dev.to"/>
         <ExperiencesCard />
         <HobbiesCard />
-        <ProjectCard />
+
+        <FiltersCard :filters="filters"/>
+        <div v-for="project in getArrayFiltered(projects, getFilter)" v-bind:key="project.index" >
+            <div>
+                <ProjectCard
+                    :image="project.image"
+                    :tags="project.tags"
+                    :title="project.title"
+                    :description="project.description"
+                />
+            </div>
+        </div>
     </div>
 </template>
 
@@ -21,10 +32,13 @@
     import ExperiencesCard from "@/components/ExperiencesCard";
     import HobbiesCard from "@/components/HobbiesCard";
     import ProjectCard from "@/components/ProjectCard";
+    import FiltersCard from "@/components/FiltersCard";
+
+    import {store} from '@/store.js'
 
     export default {
         name: "Portfolio",
-        components: {ProjectCard, HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
+        components: {FiltersCard, ProjectCard, HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [
@@ -58,6 +72,43 @@
                         ]
                     }
                 ],
+                projects: [
+                    {
+                        image: "cooking.jpg",
+                        tags: ["HTML", "CSS", "responsive"],
+                        title: "Recipe Blog",
+                        description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                    },
+                    {
+                        image: "cooking.jpg",
+                        tags: ["CSS", "responsive"],
+                        title: "Recipe Blog",
+                        description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                    },
+                    {
+                        image: "cooking.jpg",
+                        tags: ["HTML", "responsive"],
+                        title: "Recipe Blog",
+                        description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                    },
+                    {
+                        image: "cooking.jpg",
+                        tags: ["HTML", "CSS"],
+                        title: "Recipe Blog",
+                        description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                    }
+                ],
+                filters: ["HTML", "CSS", "responsive"]
+            }
+        },
+        computed: {
+            getFilter() {
+                return store.filter;
+            }
+        },
+        methods: {
+            getArrayFiltered(array, filter) {
+                return  array.filter(item => item.tags.includes(filter));
             }
         }
     }
