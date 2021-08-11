@@ -47,6 +47,7 @@
         display: flex;
         flex-wrap: wrap;
         gap: 30px;
+        width: 100%;
 
         &__image {
             flex: 1;

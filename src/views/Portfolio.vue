@@ -1,5 +1,5 @@
 <template>
-    <div class="layout">
+    <div class="portfolio">
         <Profil/>
         <SkillsCard v-bind:title="skillsCards[0].title" v-bind:skills="skillsCards[0].skills"/>
         <BlogCard
@@ -11,9 +11,9 @@
         <ExperiencesCard />
         <HobbiesCard />
 
-        <FiltersCard :filters="filters"/>
-        <div v-for="project in getArrayFiltered(projects, getFilter)" v-bind:key="project.index" >
-            <div>
+        <FiltersCard title="Projects" :n-items="projects.length" :filters="filters"/>
+        <div class="portfolio__projects">
+            <div class="portfolio__project-card-container" v-for="project in getArrayFiltered(projects, getFilter)" v-bind:key="project.index" >
                 <ProjectCard
                     :image="project.image"
                     :tags="project.tags"
@@ -98,7 +98,7 @@
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                     }
                 ],
-                filters: ["HTML", "CSS", "responsive"]
+                filters: ["ALL","HTML", "CSS", "responsive"]
             }
         },
         computed: {
@@ -108,19 +108,34 @@
         },
         methods: {
             getArrayFiltered(array, filter) {
-                return  array.filter(item => item.tags.includes(filter));
+                if (filter === "ALL") {
+                    return array;
+                } else {
+                    return  array.filter(item => item.tags.includes(filter));
+                }
             }
         }
     }
 </script>
 
 <style lang="scss" scoped>
-    .layout {
+    .portfolio {
         display: flex;
         flex-direction: column;
         min-height: 100vh;
         min-width: 280px;
         gap: 20px;
+
+        &__projects {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        &__project-card-container {
+            flex-basis: 30%;
+            flex-grow: 1;
+        }
     }
 
 </style>
