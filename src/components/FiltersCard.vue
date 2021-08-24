@@ -72,6 +72,7 @@
         border: solid 1px $color-text;
         padding: 8px 22px;
         border-radius: $border-radius;
+        cursor: pointer;
 
         font: {
             family: $font-family-primary;

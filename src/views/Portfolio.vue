@@ -22,6 +22,9 @@
                 />
             </div>
         </div>
+        <Carousel>
+
+        </Carousel>
     </div>
 </template>
 
@@ -35,10 +38,11 @@
     import FiltersCard from "@/components/FiltersCard";
 
     import {store} from '@/store.js'
+    import Carousel from "@/components/Carousel";
 
     export default {
         name: "Portfolio",
-        components: {FiltersCard, ProjectCard, HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
+        components: {Carousel, FiltersCard, ProjectCard, HobbiesCard, ExperiencesCard, BlogCard, SkillsCard, Profil},
         data() {
             return {
                 skillsCards: [
