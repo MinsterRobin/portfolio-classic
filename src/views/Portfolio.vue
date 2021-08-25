@@ -12,18 +12,15 @@
         <HobbiesCard />
 
         <FiltersCard title="Projects" :n-items="projects.length" :filters="filters"/>
-        <div class="portfolio__projects">
-            <div class="portfolio__project-card-container" v-for="project in getArrayFiltered(projects, getFilter)" v-bind:key="project.index" >
-                <ProjectCard
-                    :image="project.image"
-                    :tags="project.tags"
-                    :title="project.title"
-                    :description="project.description"
-                />
-            </div>
-        </div>
-        <Carousel>
 
+        <Carousel :items="getArrayFiltered(projects, getFilter)">
+            <ProjectCard
+                slot-scope="div"
+                :image="div.item.image"
+                :tags="div.item.tags"
+                :title="div.item.title"
+                :description="div.item.description"
+            />
         </Carousel>
     </div>
 </template>

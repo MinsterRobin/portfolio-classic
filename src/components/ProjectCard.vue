@@ -48,6 +48,11 @@
         flex-wrap: wrap;
         gap: 30px;
         width: 100%;
+        max-width: 400px;
+
+        @media (max-width: 768px) {
+            max-width: 100%;
+        }
 
         &__image {
             flex: 1;
