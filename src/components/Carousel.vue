@@ -8,12 +8,18 @@
             </div>
         </transition-group>
 
-        <div class="carousel__buttons">
-            <button class="button" @click="slide(-1)">Prev</button>
+        <div class="carousel__controls">
+            <button class="button" @click="slide(-1)"><i class="fas fa-arrow-left fa-1x" /></button>
             <div v-for="nSlide in getNumberOfSlides" :key="nSlide">
-                <button @click="slideTo(nSlide - 1)">{{nSlide}}</button>
+                <button
+                        class="button"
+                        @click="slideTo(nSlide - 1)"
+                        v-bind:class="{'button--active': currentSlide === nSlide - 1}">
+
+                    {{nSlide}}
+                </button>
             </div>
-            <button class="button" @click="slide(1)">Next</button>
+            <button class="button" @click="slide(1)"><i class="fas fa-arrow-right fa-1x" /></button>
         </div>
     </div>
 </template>
@@ -83,6 +89,7 @@
 
         width: 100%;
         min-height: 300px;
+        gap: 20px;
 
         &__container {
             display: flex;
@@ -100,17 +107,33 @@
 
             display: flex;
             justify-content: space-between;
-            border: 1px solid;
         }
 
-        &__buttons {
+        &__controls {
             display: flex;
+            gap: 12px;
         }
     }
 
     .button {
-        position: relative;
         cursor: pointer;
+        width: 36px;
+        height: 36px;
+        border: 1px solid $color-text;
+        border-radius: 4px;
+
+        font: {
+            family: $font-family-secondary;
+            size: $font-size-xs;
+            weight: 400;
+        }
+        color: $color-text;
+
+        &--active {
+            background-color: $color-primary;
+            color: $color-background-secondary;
+            border: none;
+        }
     }
 
     /*------------------------*/
@@ -119,25 +142,30 @@
         transition: transform 0.5s ease-in-out;
     }
 
-
-    .slide-next-enter {
-        transform: translate(100%);
-    }
     .slide-next-enter-to {
         transform: translate(-100%);
     }
 
+    .slide-next-enter {
+        transform: translate(-200%);
+    }
+
     .slide-next-leave-to {
-        transform: translate(-100%);
+        transform: translate(100%);
     }
 
     .slide-prev-enter-active, .slide-prev-leave-active {
         transition: transform 0.5s ease-in-out;
     }
 
-    .slide-prev-enter {
-        transform: translate(100%);
+    .slide-prev-enter-to {
+        transform: translate(-100%);
     }
+
+    .slide-prev-enter {
+        transform: translate(0);
+    }
+
     .slide-prev-leave-to {
         transform: translate(-100%);
     }

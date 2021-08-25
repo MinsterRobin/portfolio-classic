@@ -10,8 +10,8 @@
                 </div>
 
                 <div>
-                    <p class="profil__text--light"><i class="gne fas fa-envelope fa-1x" /> billy@example.com</p>
-                    <p class="profil__text--light"><i class="gne fas fa-phone fa-1x" /> (+603) 546 624 342</p>
+                    <p class="profil__text--light"><i class="fas fa-envelope fa-1x" /> billy@example.com</p>
+                    <p class="profil__text--light"><i class="fas fa-phone fa-1x" /> (+603) 546 624 342</p>
                 </div>
             </div>
 
