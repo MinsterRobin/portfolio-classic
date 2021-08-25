@@ -80,6 +80,10 @@
             size: $font-size-l;
         }
 
+        &:hover {
+            opacity: 0.7;
+        }
+
         &--active {
             background-color: $color-primary;
             color: $color-background-secondary;

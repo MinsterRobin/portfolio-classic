@@ -2,9 +2,9 @@
     <div class="carousel" >
         <transition-group :name="transitionName" tag="div" class="carousel__container">
             <div :key="currentSlide" class="carousel__slides-container">
-                <slot v-for="item in displayedCards" :item="item" class="carousel__card-container">
-
-                </slot>
+                <div v-for="item in displayedCards"  :key="item.index" class="carousel__card-container">
+                    <slot :item="item"/>
+                </div>
             </div>
         </transition-group>
 
@@ -71,10 +71,13 @@
             setnItemsBySlide() {
                 if (screen.width < 768) {
                     this.nItemsBySlide = 1;
+                    this.currentSlide = 0;
                 } else if (screen.width < 1024) {
                     this.nItemsBySlide = 2;
+                    this.currentSlide = 0;
                 } else {
                     this.nItemsBySlide = 3;
+                    this.currentSlide = 0;
                 }
             }
         },
@@ -88,13 +91,13 @@
         overflow: hidden;
 
         width: 100%;
-        min-height: 300px;
         gap: 20px;
 
         &__container {
             display: flex;
             position: relative;
             width: 100%;
+
         }
 
         &__slides-container {
@@ -106,11 +109,12 @@
             flex: 0 0 auto;
 
             display: flex;
-            justify-content: space-between;
+
         }
 
         &__controls {
             display: flex;
+            flex-wrap: wrap;
             gap: 12px;
         }
     }
@@ -121,6 +125,10 @@
         height: 36px;
         border: 1px solid $color-text;
         border-radius: 4px;
+
+        &:hover {
+            opacity: 0.7;
+        }
 
         font: {
             family: $font-family-secondary;
@@ -133,6 +141,14 @@
             background-color: $color-primary;
             color: $color-background-secondary;
             border: none;
+        }
+    }
+
+    .carousel__card-container {
+        max-width: 500px;
+        
+        @media (max-width: 768px) {
+            max-width: 100%;
         }
     }
 

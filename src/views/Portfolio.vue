@@ -77,31 +77,37 @@
                 ],
                 projects: [
                     {
-                        image: "cooking.jpg",
-                        tags: ["HTML", "CSS", "responsive"],
+                        image: "recipe-blog.jpg",
+                        tags: ["React.js", "HTML", "Styled-components", "responsive"],
                         title: "Recipe Blog",
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                     },
                     {
-                        image: "cooking.jpg",
-                        tags: ["CSS", "responsive"],
-                        title: "Recipe Blog",
+                        image: "edie.jpg",
+                        tags: ["Vue.js", "HTML", "SCSS", "responsive"],
+                        title: "Edie Website",
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                     },
                     {
-                        image: "cooking.jpg",
-                        tags: ["HTML", "responsive"],
-                        title: "Recipe Blog",
+                        image: "interior-consultant.jpg",
+                        tags: ["React.js", "Styled-components", "HTML", "responsive"],
+                        title: "Interior Consultant Website",
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                     },
                     {
-                        image: "cooking.jpg",
-                        tags: ["HTML", "CSS"],
-                        title: "Recipe Blog",
+                        image: "my-gallery.jpg",
+                        tags: ["Vue.js", "HTML", "SCSS", "responsive"],
+                        title: "Gallery Portfolio",
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
-                    }
+                    },
+                    {
+                        image: "my-team.jpg",
+                        tags: ["Vue.js", "HTML", "SCSS", "responsive"],
+                        title: "Team Page",
+                        description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
+                    },
                 ],
-                filters: ["ALL","HTML", "CSS", "responsive"]
+                filters: ["ALL","HTML", "CSS", "responsive", "Vue.js", "React.js"]
             }
         },
         computed: {
