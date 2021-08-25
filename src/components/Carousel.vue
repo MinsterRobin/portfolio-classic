@@ -69,10 +69,10 @@
                 this.currentSlide = n;
             },
             setnItemsBySlide() {
-                if (screen.width < 768) {
+                if (window.innerWidth < 768) {
                     this.nItemsBySlide = 1;
                     this.currentSlide = 0;
-                } else if (screen.width < 1024) {
+                } else if (window.innerWidth < 1024) {
                     this.nItemsBySlide = 2;
                     this.currentSlide = 0;
                 } else {
