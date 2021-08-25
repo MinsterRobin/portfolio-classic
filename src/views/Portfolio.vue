@@ -107,7 +107,7 @@
                         description: "In this project, I work with HTML and CSS to create a responsive page . The design is from devchallenge.io. Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                     },
                 ],
-                filters: ["ALL","HTML", "CSS", "responsive", "Vue.js", "React.js"]
+                filters: ["ALL","HTML", "responsive", "Vue.js", "React.js"]
             }
         },
         computed: {

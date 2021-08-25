@@ -16,7 +16,9 @@
             </div>
 
             <p class="profil__text--light">Self-motivated developer, who is willing to learn and create outstanding UI applications.
-                <br><br>Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.</p>
+                <br><br>Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie.Self-motivated developer, who is willing to learn and create outstanding UI applications.
+
+                Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie. </p>
         </div>
     </div>
 </template>
