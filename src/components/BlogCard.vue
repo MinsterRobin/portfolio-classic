@@ -57,11 +57,12 @@
         }
 
         &__content {
+            position: relative;
             flex: 1;
             min-width: 50%;
             display: flex;
             flex-direction: column;
-            justify-content: space-between;
+
             gap: 20px;
         }
 
@@ -86,13 +87,14 @@
         }
 
         &__link {
+            margin-top: auto;
             font: {
                 weight: 500;
                 size: $font-size-m;
             }
             color: $color-primary;
             text-decoration: none;
-            justify-self: flex-end;
+            justify-items: flex-end;
         }
     }
 </style>

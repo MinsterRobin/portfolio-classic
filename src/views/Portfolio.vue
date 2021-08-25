@@ -1,19 +1,21 @@
 <template>
     <div class="portfolio">
-        <Profil/>
-        <SkillsCard v-bind:title="skillsCards[0].title" v-bind:skills="skillsCards[0].skills"/>
+        <Profil class="portfolio__profil"/>
+        <SkillsCard class="portfolio__skills" v-bind:title="skillsCards[0].title" v-bind:skills="skillsCards[0].skills"/>
         <BlogCard
+                class="portfolio__blog"
                 image="blog.jpg"
                 title="How to organize your CSS"
                 description="In this article I tell the story about Proin eu justo sit amet lacus bibendum tincidunt. Vivamus non volutpat nisl, a luctus mi.
                             Donec aliquam est dui, vel vestibulum diam sollicitudin id. Quisque feugiat malesuada molestie."
                 link="dev.to"/>
-        <ExperiencesCard />
-        <HobbiesCard />
+        <HobbiesCard class="portfolio__hobbies"/>
+        <ExperiencesCard class="portfolio__experiences"/>
 
-        <FiltersCard title="Projects" :n-items="projects.length" :filters="filters"/>
 
-        <Carousel :items="getArrayFiltered(projects, getFilter)">
+        <FiltersCard class="portfolio__filters" title="Projects" :n-items="projects.length" :filters="filters"/>
+
+        <Carousel class="portfolio__carousel" :items="getArrayFiltered(projects, getFilter)">
             <ProjectCard
                 slot-scope="div"
                 :image="div.item.image"
@@ -121,21 +123,59 @@
 
 <style lang="scss" scoped>
     .portfolio {
-        display: flex;
-        flex-direction: column;
+        display: grid;
+        grid-template:
+                "a a a"
+                "b c c"
+                "d c c"
+                "d e e"
+                "f f f"
+                "g g g";
         min-height: 100vh;
         min-width: 280px;
         gap: 20px;
-
-        &__projects {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
+        
+        @media (max-width: 1024px) {
+            grid-template:
+                "a a"
+                "b c"
+                "d c"
+                "e e"
+                "f f"
+                "g g";
         }
 
-        &__project-card-container {
-            flex-basis: 30%;
-            flex-grow: 1;
+        @media (max-width: 768px) {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__profil {
+            grid-area: a;
+        }
+
+        &__skills {
+            grid-area: b;
+        }
+
+        &__blog {
+            grid-area: d;
+        }
+
+        &__hobbies {
+            grid-area: c;
+        }
+
+        &__experiences{
+            grid-area: e;
+        }
+
+        &__filters {
+            grid-area: f;
+        }
+
+        &__carousel {
+            grid-area: g;
         }
     }
 
